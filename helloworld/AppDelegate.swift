@@ -17,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
+
+        var controller: UIViewController = UIViewController()
+        var view = UIView(frame: CGRectMake(0, 0, 320, 568))
+        view.backgroundColor = UIColor.blackColor()
+        controller.view = view
+        
+        var label: UILabel = UILabel(frame: CGRectMake(0, 0, 320, 20))
+        label.center = CGPointMake(160, 284)
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "Hello World ! Hello Swift !"
+        label.textColor = UIColor.whiteColor()
+        controller.view.addSubview(label)
+        self.window!.rootViewController = controller
+        
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         return true
